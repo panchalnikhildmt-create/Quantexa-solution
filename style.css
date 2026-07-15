@@ -300,6 +300,84 @@ main {
   place-items: center;
 }
 
+.service-banner-shell {
+  width: min(100%, 560px);
+  padding: 1.15rem;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.service-banner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #071b3d;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+
+.service-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(0, 184, 255, 0.24), transparent 38%);
+  pointer-events: none;
+}
+
+.service-column {
+  position: relative;
+  padding: 1.15rem 0.8rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.service-column:last-child {
+  border-right: none;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(0, 173, 255, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 173, 255, 0.25), 0 0 22px rgba(0, 173, 255, 0.28);
+}
+
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #53c9ff;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-column h3 {
+  font-size: 0.74rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.service-column p {
+  font-size: 0.73rem;
+  line-height: 1.45;
+  color: #8fa0bd;
+  font-weight: 500;
+}
+
 .hero-card {
   width: min(100%, 440px);
   padding: 1.7rem;
@@ -966,6 +1044,28 @@ main {
 
   .hero__stats {
     grid-template-columns: 1fr;
+  }
+
+  .service-banner-shell {
+    padding: 0.85rem;
+  }
+
+  .service-banner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-column {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .service-column:nth-child(2n) {
+    border-right: none;
+  }
+
+  .service-column:last-child,
+  .service-column:nth-last-child(2) {
+    border-bottom: none;
   }
 
   .laptop-mockup-container {
